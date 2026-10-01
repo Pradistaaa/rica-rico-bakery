@@ -1,17 +1,2176 @@
 ---
+const products = [
+  {
+    name: "Bika Ambon Original",
+    category: "Signature",
+    price: "Rp25.000",
+    description: "Tekstur lembut, berserat dan aroma khas yang menjadi favorit pelanggan.",
+    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    name: "Bika Ambon Pandan",
+    category: "Signature",
+    price: "Rp25.000",
+    description: "Perpaduan tekstur khas Bika Ambon dengan aroma pandan yang harum.",
+    image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    name: "Brownies Premium",
+    category: "Brownies",
+    price: "Rp60.000",
+    description: "Brownies lembut dengan rasa cokelat yang rich dan topping pilihan.",
+    image: "/images/products/brownies-premium.jpg"
+  },
+  {
+    name: "Bolu Jadul",
+    category: "Bolu",
+    price: "Rp50.000",
+    description: "Bolu klasik dengan rasa familiar yang cocok untuk keluarga.",
+      image: "/images/products/bolu-jadul.jpg"
+  },
+  {
+    name: "Pastry",
+    category: "Pastry",
+    price: "Rp15.000",
+    description: "Pastry renyah dan buttery untuk teman perjalanan atau santai.",
+    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    name: "Hampers Rica Rico",
+    category: "Hampers",
+    price: "Rp150.000",
+    description: "Pilihan spesial untuk hadiah, keluarga, maupun rekan kerja.",
+    image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
+  }
+];
 
+const whatsapp = "6285694021978";
+
+const waMessage = encodeURIComponent(
+  "Halo Rica Rico Bakery, saya ingin bertanya mengenai produk dan pemesanan."
+);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Rica Rico Bakery | Freshly Baked with Love</title>
+
+    <meta
+      name="description"
+      content="Rica Rico Bakery menghadirkan Bika Ambon, brownies, bolu, pastry dan berbagai pilihan bakery untuk keluarga, oleh-oleh dan hampers."
+    />
+
+    <meta
+      name="keywords"
+      content="Rica Rico Bakery, Bika Ambon, bakery Senen, toko kue Senen, Stasiun Pasar Senen, oleh-oleh Jakarta"
+    />
+
+    <meta name="theme-color" content="#24140f" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="#home" class="brand">
+          <span class="brand-mark">R</span>
+
+          <span class="brand-text">
+            <strong>RICA RICO</strong>
+            <small>BAKERY</small>
+          </span>
+        </a>
+
+        <nav class="desktop-nav">
+          <a href="#menu">Menu</a>
+          <a href="#story">Tentang Kami</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#location">Lokasi</a>
+        </nav>
+
+        <a
+          href={`https://wa.me/${whatsapp}?text=${waMessage}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="nav-order"
+        >
+          Order via WhatsApp
+        </a>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Buka menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#menu">Menu</a>
+        <a href="#story">Tentang Kami</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Lokasi</a>
+
+        <a
+          href={`https://wa.me/${whatsapp}?text=${waMessage}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mobile-order"
+        >
+          Order via WhatsApp
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="home">
+        <div class="hero-bg"></div>
+
+        <div class="hero-content">
+          <div class="hero-copy">
+            <div class="eyebrow">
+              <span></span>
+              FRESHLY BAKED • EST. RICA RICO
+            </div>
+
+            <h1>
+              Rasa yang
+              <em> selalu </em>
+              ingin dibawa pulang.
+            </h1>
+
+            <p>
+              Dari oven kami ke perjalanan Anda. Temukan Bika Ambon,
+              bakery dan pilihan manis yang dibuat untuk menemani
+              setiap momen istimewa.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#menu" class="btn btn-primary">
+                Jelajahi Menu
+                <span>↗</span>
+              </a>
+
+              <a href="#location" class="btn btn-outline">
+                Temukan Kami
+              </a>
+            </div>
+
+            <div class="hero-trust">
+              <div>
+                <strong>Fresh</strong>
+                <span>Dibuat dengan perhatian</span>
+              </div>
+
+              <div>
+                <strong>Premium</strong>
+                <span>Untuk setiap momen</span>
+              </div>
+
+              <div>
+                <strong>Local</strong>
+                <span>Hadir di Stasiun Senen</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-product">
+            <div class="hero-ring"></div>
+
+            <div class="hero-image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1100&q=90"
+                alt="Produk bakery Rica Rico"
+              />
+            </div>
+
+            <div class="floating-card card-top">
+              <span>Signature</span>
+              <strong>Bika Ambon</strong>
+            </div>
+
+            <div class="floating-card card-bottom">
+              <span>Mulai dari</span>
+              <strong>Rp25K</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-scroll">
+          <span>SCROLL TO DISCOVER</span>
+          <div></div>
+        </div>
+      </section>
+
+      <!-- INTRO -->
+      <section class="intro section">
+        <div class="container intro-grid">
+          <div class="section-label">
+            <span>01</span>
+            OUR PHILOSOPHY
+          </div>
+
+          <div class="intro-content">
+            <h2>
+              Bukan sekadar bakery.
+              <span>Ini tentang rasa.</span>
+            </h2>
+
+            <p>
+              Kami percaya makanan yang baik bukan hanya soal rasa,
+              tetapi juga tentang kenangan yang tercipta setelahnya.
+              Karena itu, setiap produk Rica Rico dibuat dengan
+              perhatian pada rasa, tekstur dan kualitas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MENU -->
+      <section class="menu-section section" id="menu">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="section-label">
+                <span>02</span>
+                OUR MENU
+              </div>
+
+              <h2>
+                Favorit untuk
+                <em>setiap momen.</em>
+              </h2>
+            </div>
+
+            <p>
+              Pilihan bakery yang cocok untuk oleh-oleh,
+              keluarga, perjalanan maupun hadiah.
+            </p>
+          </div>
+
+          <div class="category-filter">
+            <button class="filter active" data-filter="all">Semua</button>
+            <button class="filter" data-filter="Signature">Signature</button>
+            <button class="filter" data-filter="Brownies">Brownies</button>
+            <button class="filter" data-filter="Bolu">Bolu</button>
+            <button class="filter" data-filter="Pastry">Pastry</button>
+            <button class="filter" data-filter="Hampers">Hampers</button>
+          </div>
+
+          <div class="products-grid" id="productsGrid">
+            {
+              products.map((product, index) => (
+                <article class="product-card" data-category={product.category}>
+                  <div class="product-image">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      loading={index > 1 ? "lazy" : "eager"}
+                    />
+
+                    <span class="product-tag">{product.category}</span>
+
+                    <button
+                      class="product-plus"
+                      aria-label={`Lihat ${product.name}`}
+                    >
+                      +
+                    </button>
+                  </div>
+
+                  <div class="product-info">
+                    <div>
+                      <h3>{product.name}</h3>
+                      <p>{product.description}</p>
+                    </div>
+
+                    <strong class="product-price">{product.price}</strong>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
+
+          <div class="menu-note">
+            <span>*</span>
+            Harga merupakan estimasi dan dapat berubah berdasarkan
+            ukuran, varian dan ketersediaan produk.
+          </div>
+        </div>
+      </section>
+
+      <!-- SIGNATURE -->
+      <section class="signature section">
+        <div class="container signature-grid">
+          <div class="signature-image">
+            <img
+              src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=90"
+              alt="Bika Ambon Rica Rico"
+              loading="lazy"
+            />
+
+            <div class="signature-stamp">
+              <span>RICA</span>
+              <strong>RICO</strong>
+              <small>SIGNATURE</small>
+            </div>
+          </div>
+
+          <div class="signature-content">
+            <div class="section-label">
+              <span>03</span>
+              SIGNATURE PRODUCT
+            </div>
+
+            <h2>
+              Bika Ambon.
+              <em>Rasa yang punya cerita.</em>
+            </h2>
+
+            <p>
+              Tekstur berserat yang khas, aroma harum dan rasa
+              yang familiar membuat Bika Ambon menjadi salah satu
+              pilihan yang cocok dibawa pulang setelah perjalanan.
+            </p>
+
+            <div class="signature-details">
+              <div>
+                <span>01</span>
+                <strong>Tekstur khas</strong>
+                <p>Lembut dengan serat yang cantik.</p>
+              </div>
+
+              <div>
+                <span>02</span>
+                <strong>Freshly baked</strong>
+                <p>Rasa terbaik untuk dinikmati bersama.</p>
+              </div>
+
+              <div>
+                <span>03</span>
+                <strong>Perfect for gift</strong>
+                <p>Cocok sebagai oleh-oleh.</p>
+              </div>
+            </div>
+
+            <a
+              href={`https://wa.me/${whatsapp}?text=${encodeURIComponent("Halo Rica Rico Bakery, saya ingin order Bika Ambon.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-link"
+            >
+              Pesan Bika Ambon
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- STORY -->
+      <section class="story section" id="story">
+        <div class="container">
+          <div class="story-grid">
+            <div class="section-label">
+              <span>04</span>
+              OUR STORY
+            </div>
+
+            <div>
+              <h2>
+                Dibuat untuk
+                <em>dibawa pulang.</em>
+              </h2>
+
+              <p class="story-lead">
+                Rica Rico hadir untuk menjadi bagian kecil dari
+                perjalanan Anda — ketika sedang menuju rumah,
+                bertemu keluarga, atau sekadar ingin membawa
+                sesuatu yang istimewa.
+              </p>
+
+              <div class="story-columns">
+                <p>
+                  Kami memilih produk bakery yang familiar namun
+                  tetap memiliki karakter. Dari Bika Ambon hingga
+                  brownies dan pastry, setiap pilihan dirancang
+                  untuk mudah dinikmati kapan saja.
+                </p>
+
+                <p>
+                  Berlokasi di Stasiun Pasar Senen, Rica Rico
+                  menjadi pilihan praktis bagi Anda yang sedang
+                  bepergian maupun mencari oleh-oleh dari Jakarta.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="features">
+        <div class="container features-grid">
+          <div class="feature">
+            <span>01</span>
+            <div>
+              <strong>Fresh Everyday</strong>
+              <p>Produk siap menemani perjalanan Anda.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span>02</span>
+            <div>
+              <strong>Perfect Gift</strong>
+              <p>Cocok untuk keluarga dan orang tersayang.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span>03</span>
+            <div>
+              <strong>Easy to Order</strong>
+              <p>Hubungi kami melalui WhatsApp.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span>04</span>
+            <div>
+              <strong>Strategic Location</strong>
+              <p>Berada di Stasiun Pasar Senen.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="gallery section" id="gallery">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="section-label">
+                <span>05</span>
+                GALLERY
+              </div>
+
+              <h2>
+                A little taste of
+                <em>Rica Rico.</em>
+              </h2>
+            </div>
+          </div>
+
+          <div class="gallery-grid">
+            <div class="gallery-item gallery-large">
+              <img
+                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=85"
+                alt="Bakery Rica Rico"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1575377427642-087cf684f04d?auto=format&fit=crop&w=900&q=85"
+                alt="Brownies"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85"
+                alt="Fresh pastry"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="gallery-item gallery-wide">
+              <img
+                src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=1200&q=85"
+                alt="Cake"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOCATION -->
+      <section class="location section" id="location">
+        <div class="container location-grid">
+          <div class="location-content">
+            <div class="section-label">
+              <span>06</span>
+              FIND US
+            </div>
+
+            <h2>
+              Sebelum naik kereta,
+              <em>jangan lupa bawa pulang.</em>
+            </h2>
+
+            <p>
+              Temukan Rica Rico Bakery di area Stasiun Pasar Senen,
+              Jakarta Pusat.
+            </p>
+
+            <div class="location-info">
+              <div>
+                <span>ADDRESS</span>
+                <strong>
+                  Stasiun Pasar Senen,<br />
+                  Jl. Pasar Senen, Jakarta Pusat
+                </strong>
+              </div>
+
+              <div>
+                <span>OPENING HOURS</span>
+                <strong>Setiap Hari<br />05.00 – 21.00</strong>
+              </div>
+
+              <div>
+                <span>CONTACT</span>
+                <strong>0856 9402 1978</strong>
+              </div>
+            </div>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Rica+Rico+Bakery+Stasiun+Senen"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-dark"
+            >
+              Buka Google Maps
+              <span>↗</span>
+            </a>
+          </div>
+
+          <div class="map-card">
+            <div class="map-pattern"></div>
+
+            <div class="map-pin">
+              <div>R</div>
+              <span>Rica Rico Bakery</span>
+            </div>
+
+            <div class="map-label label-one">STASIUN SENEN</div>
+            <div class="map-label label-two">JAKARTA PUSAT</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <div class="container cta-content">
+          <div class="section-label">
+            <span>07</span>
+            LET'S CONNECT
+          </div>
+
+          <h2>
+            Mau bawa pulang
+            <em>sesuatu yang istimewa?</em>
+          </h2>
+
+          <p>
+            Tanya menu, cek ketersediaan atau langsung pesan
+            melalui WhatsApp.
+          </p>
+
+          <a
+            href={`https://wa.me/${whatsapp}?text=${waMessage}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-button"
+          >
+            <span class="wa-icon">◔</span>
+            Chat via WhatsApp
+            <span>↗</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq section">
+        <div class="container faq-grid">
+          <div>
+            <div class="section-label">
+              <span>08</span>
+              FAQ
+            </div>
+
+            <h2>
+              Pertanyaan
+              <em>yang sering ditanyakan.</em>
+            </h2>
+          </div>
+
+          <div class="faq-list">
+            <details open>
+              <summary>
+                Produk apa yang tersedia?
+                <span>+</span>
+              </summary>
+
+              <p>
+                Rica Rico menyediakan berbagai pilihan bakery,
+                termasuk Bika Ambon, brownies, bolu, pastry,
+                cake dan pilihan hampers.
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                Apakah bisa melakukan pemesanan?
+                <span>+</span>
+              </summary>
+
+              <p>
+                Untuk informasi pemesanan dan ketersediaan produk,
+                silakan hubungi Rica Rico melalui WhatsApp.
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                Di mana lokasi Rica Rico?
+                <span>+</span>
+              </summary>
+
+              <p>
+                Rica Rico Bakery berada di area Stasiun Pasar
+                Senen, Jakarta Pusat.
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                Apakah harga di website sudah pasti?
+                <span>+</span>
+              </summary>
+
+              <p>
+                Harga yang ditampilkan di website merupakan
+                estimasi. Harga aktual dapat berbeda berdasarkan
+                ukuran, varian dan ketersediaan.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="brand">
+            <span class="brand-mark">R</span>
+
+            <span class="brand-text">
+              <strong>RICA RICO</strong>
+              <small>BAKERY</small>
+            </span>
+          </a>
+
+          <p>
+            Freshly baked moments,<br />
+            made to be remembered.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <span>EXPLORE</span>
+          <a href="#menu">Menu</a>
+          <a href="#story">Tentang Kami</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#location">Lokasi</a>
+        </div>
+
+        <div class="footer-column">
+          <span>CONTACT</span>
+          <a href={`https://wa.me/${whatsapp}`} target="_blank">
+            WhatsApp
+          </a>
+          <a href="tel:+6285694021978">0856 9402 1978</a>
+          <span>Stasiun Pasar Senen</span>
+        </div>
+
+        <div class="footer-column">
+          <span>FOLLOW</span>
+          <a href="#" target="_blank">Instagram</a>
+          <a href="#" target="_blank">TikTok</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span>© {new Date().getFullYear()} Rica Rico Bakery.</span>
+        <span>Made with care in Jakarta.</span>
+      </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a
+      href={`https://wa.me/${whatsapp}?text=${waMessage}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="floating-wa"
+      aria-label="Chat WhatsApp"
+    >
+      <span>◔</span>
+    </a>
+
+    <script>
+      const toggle = document.getElementById("mobileToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      toggle?.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("show");
+        toggle?.classList.toggle("active");
+      });
+
+      document.querySelectorAll("#mobileMenu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu?.classList.remove("show");
+          toggle?.classList.remove("active");
+        });
+      });
+
+      const filters = document.querySelectorAll(".filter");
+      const cards = document.querySelectorAll(".product-card");
+
+      filters.forEach((filter) => {
+        filter.addEventListener("click", () => {
+          filters.forEach((item) => item.classList.remove("active"));
+          filter.classList.add("active");
+
+          const selected = filter.getAttribute("data-filter");
+
+          cards.forEach((card) => {
+            const category = card.getAttribute("data-category");
+
+            if (selected === "all" || category === selected) {
+              card.classList.remove("hidden");
+            } else {
+              card.classList.add("hidden");
+            }
+          });
+        });
+      });
+    </script>
+
+    <style>
+      :root {
+        --brown: #24140f;
+        --brown-soft: #3a2119;
+        --cream: #f6f0e7;
+        --cream-dark: #e9dfd1;
+        --gold: #b88a4a;
+        --text: #29201c;
+        --muted: #796d65;
+        --white: #fffdf9;
+        --border: rgba(36, 20, 15, 0.13);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        color: var(--text);
+        background: var(--white);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 48px));
+        margin-inline: auto;
+      }
+
+      .section {
+        padding: 120px 0;
+      }
+
+      /* NAVBAR */
+
+      .navbar {
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 253, 249, 0.92);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(36, 20, 15, 0.08);
+      }
+
+      .nav-container {
+        width: min(1280px, calc(100% - 48px));
+        height: 82px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--gold);
+        border-radius: 50%;
+        color: var(--gold);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 27px;
+        font-weight: 700;
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+      }
+
+      .brand-text strong {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 20px;
+        letter-spacing: 0.14em;
+      }
+
+      .brand-text small {
+        margin-top: 4px;
+        font-size: 8px;
+        letter-spacing: 0.38em;
+        color: var(--gold);
+      }
+
+      .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 34px;
+        margin-left: auto;
+      }
+
+      .desktop-nav a {
+        font-size: 13px;
+        font-weight: 600;
+        color: #5d5049;
+        transition: color 0.2s;
+      }
+
+      .desktop-nav a:hover {
+        color: var(--gold);
+      }
+
+      .nav-order {
+        padding: 13px 19px;
+        border-radius: 100px;
+        background: var(--brown);
+        color: white;
+        font-size: 12px;
+        font-weight: 700;
+        transition: transform 0.2s, background 0.2s;
+      }
+
+      .nav-order:hover {
+        transform: translateY(-2px);
+        background: var(--brown-soft);
+      }
+
+      .mobile-toggle {
+        display: none;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .mobile-toggle span {
+        width: 25px;
+        height: 2px;
+        display: block;
+        background: var(--brown);
+        margin: 5px 0;
+      }
+
+      .mobile-menu {
+        display: none;
+      }
+
+      /* HERO */
+
+      .hero {
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: var(--cream);
+        padding-top: 82px;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 80% 30%, rgba(184, 138, 74, 0.17), transparent 27%),
+          radial-gradient(circle at 20% 80%, rgba(58, 33, 25, 0.08), transparent 30%);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        width: min(1180px, calc(100% - 48px));
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 0.9fr;
+        gap: 70px;
+        align-items: center;
+      }
+
+      .eyebrow,
+      .section-label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--gold);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+      }
+
+      .eyebrow span {
+        width: 35px;
+        height: 1px;
+        background: var(--gold);
+      }
+
+      .hero h1 {
+        max-width: 700px;
+        margin: 25px 0;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(58px, 7vw, 96px);
+        line-height: 0.9;
+        font-weight: 600;
+        letter-spacing: -0.045em;
+      }
+
+      h1 em,
+      h2 em {
+        color: var(--gold);
+        font-weight: 500;
+      }
+
+      .hero-copy > p {
+        max-width: 560px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 35px;
+      }
+
+      .btn {
+        min-height: 52px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        padding: 0 25px;
+        border-radius: 100px;
+        font-size: 12px;
+        font-weight: 700;
+        transition: 0.25s;
+      }
+
+      .btn-primary {
+        background: var(--brown);
+        color: white;
+      }
+
+      .btn-primary:hover,
+      .btn-dark:hover {
+        transform: translateY(-3px);
+      }
+
+      .btn-outline {
+        border: 1px solid var(--border);
+      }
+
+      .btn-outline:hover {
+        border-color: var(--gold);
+      }
+
+      .hero-trust {
+        display: flex;
+        gap: 35px;
+        margin-top: 60px;
+      }
+
+      .hero-trust div {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero-trust strong {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 19px;
+      }
+
+      .hero-trust span {
+        margin-top: 3px;
+        font-size: 10px;
+        color: var(--muted);
+      }
+
+      .hero-product {
+        min-height: 600px;
+        position: relative;
+        display: grid;
+        place-items: center;
+      }
+
+      .hero-ring {
+        position: absolute;
+        width: 480px;
+        height: 480px;
+        border: 1px solid rgba(184, 138, 74, 0.35);
+        border-radius: 50%;
+      }
+
+      .hero-ring::after {
+        content: "";
+        position: absolute;
+        inset: 25px;
+        border: 1px solid rgba(184, 138, 74, 0.18);
+        border-radius: 50%;
+      }
+
+      .hero-image-wrap {
+        position: relative;
+        z-index: 2;
+        width: min(430px, 80%);
+        aspect-ratio: 0.85;
+        overflow: hidden;
+        border-radius: 220px 220px 20px 20px;
+        box-shadow: 0 30px 80px rgba(36, 20, 15, 0.18);
+      }
+
+      .hero-image-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .floating-card {
+        position: absolute;
+        z-index: 3;
+        padding: 17px 20px;
+        background: rgba(255, 253, 249, 0.94);
+        box-shadow: 0 15px 40px rgba(36, 20, 15, 0.1);
+        backdrop-filter: blur(10px);
+      }
+
+      .floating-card span {
+        display: block;
+        color: var(--gold);
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .floating-card strong {
+        display: block;
+        margin-top: 3px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 21px;
+      }
+
+      .card-top {
+        top: 100px;
+        left: 0;
+      }
+
+      .card-bottom {
+        right: 0;
+        bottom: 100px;
+      }
+
+      .hero-scroll {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        color: #988b83;
+        font-size: 8px;
+        letter-spacing: 0.2em;
+      }
+
+      .hero-scroll div {
+        width: 1px;
+        height: 35px;
+        background: #c4b7ae;
+      }
+
+      /* INTRO */
+
+      .intro {
+        background: var(--white);
+      }
+
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 0.7fr 1.3fr;
+        gap: 80px;
+      }
+
+      .section-label span {
+        font-family: "DM Sans", sans-serif;
+      }
+
+      h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(48px, 5vw, 70px);
+        line-height: 0.95;
+        font-weight: 600;
+        letter-spacing: -0.04em;
+      }
+
+      .intro-content h2 {
+        max-width: 700px;
+      }
+
+      .intro-content h2 span {
+        display: block;
+        color: var(--muted);
+        font-weight: 400;
+      }
+
+      .intro-content p {
+        max-width: 600px;
+        margin-top: 35px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.9;
+      }
+
+      /* MENU */
+
+      .menu-section {
+        background: var(--cream);
+      }
+
+      .section-heading {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        align-items: end;
+      }
+
+      .section-heading h2 {
+        margin-top: 20px;
+      }
+
+      .section-heading > p {
+        max-width: 330px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .category-filter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 55px 0 35px;
+      }
+
+      .filter {
+        border: 1px solid var(--border);
+        background: transparent;
+        padding: 10px 17px;
+        border-radius: 100px;
+        color: var(--muted);
+        font-size: 11px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .filter:hover,
+      .filter.active {
+        background: var(--brown);
+        color: white;
+        border-color: var(--brown);
+      }
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+
+      .product-card {
+        transition: opacity 0.25s, transform 0.25s;
+      }
+
+      .product-card.hidden {
+        display: none;
+      }
+
+      .product-image {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 0.95;
+        background: #e7ddd0;
+      }
+
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s;
+      }
+
+      .product-card:hover .product-image img {
+        transform: scale(1.05);
+      }
+
+      .product-tag {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        padding: 7px 11px;
+        background: rgba(255, 253, 249, 0.9);
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .product-plus {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        width: 38px;
+        height: 38px;
+        border: 0;
+        border-radius: 50%;
+        background: var(--brown);
+        color: white;
+        font-size: 20px;
+      }
+
+      .product-info {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px 2px;
+      }
+
+      .product-info h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 25px;
+        line-height: 1;
+      }
+
+      .product-info p {
+        max-width: 250px;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.6;
+      }
+
+      .product-price {
+        white-space: nowrap;
+        color: var(--gold);
+        font-size: 13px;
+      }
+
+      .menu-note {
+        margin-top: 30px;
+        color: #91857d;
+        font-size: 10px;
+      }
+
+      .menu-note span {
+        color: var(--gold);
+      }
+
+      /* SIGNATURE */
+
+      .signature {
+        background: var(--brown);
+        color: white;
+      }
+
+      .signature-grid {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 100px;
+        align-items: center;
+      }
+
+      .signature-image {
+        position: relative;
+      }
+
+      .signature-image > img {
+        aspect-ratio: 0.9;
+        object-fit: cover;
+      }
+
+      .signature-stamp {
+        position: absolute;
+        right: -30px;
+        bottom: 35px;
+        width: 115px;
+        height: 115px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        background: var(--brown);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        line-height: 0.8;
+      }
+
+      .signature-stamp span {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 16px;
+      }
+
+      .signature-stamp strong {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 28px;
+        color: var(--gold);
+      }
+
+      .signature-stamp small {
+        margin-top: 8px;
+        font-size: 6px;
+        letter-spacing: 0.2em;
+      }
+
+      .signature-content h2 {
+        margin-top: 25px;
+      }
+
+      .signature-content h2 em {
+        display: block;
+      }
+
+      .signature-content > p {
+        max-width: 570px;
+        margin-top: 30px;
+        color: #cbbcb3;
+        line-height: 1.9;
+      }
+
+      .signature-details {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-top: 45px;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .signature-details span {
+        color: var(--gold);
+        font-size: 10px;
+      }
+
+      .signature-details strong {
+        display: block;
+        margin-top: 7px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 19px;
+      }
+
+      .signature-details p {
+        margin-top: 5px;
+        color: #a9988f;
+        font-size: 10px;
+        line-height: 1.5;
+      }
+
+      .text-link {
+        display: inline-flex;
+        gap: 25px;
+        margin-top: 45px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--gold);
+        color: white;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .text-link span {
+        color: var(--gold);
+      }
+
+      /* STORY */
+
+      .story {
+        background: var(--white);
+      }
+
+      .story-grid {
+        display: grid;
+        grid-template-columns: 0.6fr 1.4fr;
+        gap: 80px;
+      }
+
+      .story-grid h2 {
+        max-width: 600px;
+      }
+
+      .story-lead {
+        max-width: 620px;
+        margin-top: 35px;
+        font-size: 18px;
+        line-height: 1.8;
+      }
+
+      .story-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+        margin-top: 40px;
+        padding-top: 35px;
+        border-top: 1px solid var(--border);
+      }
+
+      .story-columns p {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.9;
+      }
+
+      /* FEATURES */
+
+      .features {
+        background: var(--cream);
+        border-block: 1px solid var(--border);
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .feature {
+        display: flex;
+        gap: 18px;
+        padding: 55px 25px;
+        border-right: 1px solid var(--border);
+      }
+
+      .feature:first-child {
+        padding-left: 0;
+      }
+
+      .feature:last-child {
+        border: 0;
+      }
+
+      .feature > span {
+        color: var(--gold);
+        font-size: 9px;
+      }
+
+      .feature strong {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 21px;
+      }
+
+      .feature p {
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 10px;
+        line-height: 1.5;
+      }
+
+      /* GALLERY */
+
+      .gallery {
+        background: var(--white);
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr 0.7fr;
+        grid-template-rows: 280px 280px;
+        gap: 15px;
+        margin-top: 55px;
+      }
+
+      .gallery-item {
+        overflow: hidden;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.04);
+      }
+
+      .gallery-large {
+        grid-row: span 2;
+      }
+
+      .gallery-wide {
+        grid-column: span 2;
+      }
+
+      /* LOCATION */
+
+      .location {
+        background: var(--cream);
+      }
+
+      .location-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 100px;
+        align-items: center;
+      }
+
+      .location-content h2 {
+        max-width: 600px;
+        margin-top: 25px;
+      }
+
+      .location-content > p {
+        max-width: 500px;
+        margin-top: 25px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .location-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin: 40px 0;
+      }
+
+      .location-info div {
+        padding-top: 15px;
+        border-top: 1px solid var(--border);
+      }
+
+      .location-info span {
+        display: block;
+        color: var(--gold);
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+      }
+
+      .location-info strong {
+        display: block;
+        margin-top: 7px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 17px;
+      }
+
+      .btn-dark {
+        background: var(--brown);
+        color: white;
+      }
+
+      .map-card {
+        min-height: 500px;
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(30deg, transparent 48%, rgba(36,20,15,.08) 49%, transparent 51%),
+          linear-gradient(-30deg, transparent 48%, rgba(36,20,15,.06) 49%, transparent 51%),
+          #e9dfd1;
+        background-size: 90px 90px;
+        box-shadow: 0 25px 70px rgba(36, 20, 15, 0.12);
+      }
+
+      .map-card::before,
+      .map-card::after {
+        content: "";
+        position: absolute;
+        background: rgba(255, 253, 249, 0.8);
+      }
+
+      .map-card::before {
+        width: 120%;
+        height: 30px;
+        left: -10%;
+        top: 50%;
+        transform: rotate(-17deg);
+      }
+
+      .map-card::after {
+        width: 120%;
+        height: 20px;
+        left: -10%;
+        top: 35%;
+        transform: rotate(30deg);
+      }
+
+      .map-pin {
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        top: 48%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .map-pin div {
+        width: 60px;
+        height: 60px;
+        margin: auto;
+        display: grid;
+        place-items: center;
+        border-radius: 50% 50% 50% 0;
+        transform: rotate(-45deg);
+        background: var(--brown);
+        color: var(--gold);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 27px;
+      }
+
+      .map-pin div::first-letter {
+        transform: rotate(45deg);
+      }
+
+      .map-pin span {
+        display: block;
+        margin-top: 25px;
+        padding: 7px 10px;
+        background: white;
+        font-size: 9px;
+        font-weight: 700;
+      }
+
+      .map-label {
+        position: absolute;
+        z-index: 2;
+        color: #796d65;
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+      }
+
+      .label-one {
+        left: 12%;
+        top: 22%;
+      }
+
+      .label-two {
+        right: 12%;
+        bottom: 22%;
+      }
+
+      /* CTA */
+
+      .cta {
+        position: relative;
+        overflow: hidden;
+        background: var(--brown);
+        color: white;
+        padding: 130px 0;
+        text-align: center;
+      }
+
+      .cta::before,
+      .cta::after {
+        content: "";
+        position: absolute;
+        width: 450px;
+        height: 450px;
+        border: 1px solid rgba(184, 138, 74, 0.2);
+        border-radius: 50%;
+      }
+
+      .cta::before {
+        left: -250px;
+        top: -200px;
+      }
+
+      .cta::after {
+        right: -250px;
+        bottom: -250px;
+      }
+
+      .cta-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .cta h2 {
+        max-width: 800px;
+        margin: 25px auto 0;
+      }
+
+      .cta p {
+        max-width: 500px;
+        margin: 25px auto 35px;
+        color: #c5b5ab;
+        line-height: 1.8;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        padding: 16px 25px;
+        border-radius: 100px;
+        background: #f5eee5;
+        color: var(--brown);
+        font-size: 12px;
+        font-weight: 700;
+        transition: 0.25s;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+      }
+
+      .wa-icon {
+        width: 28px;
+        height: 28px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #2baa5b;
+        color: white;
+      }
+
+      /* FAQ */
+
+      .faq {
+        background: var(--white);
+      }
+
+      .faq-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 100px;
+      }
+
+      .faq h2 {
+        margin-top: 25px;
+      }
+
+      .faq-list {
+        border-top: 1px solid var(--border);
+      }
+
+      details {
+        border-bottom: 1px solid var(--border);
+      }
+
+      summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 23px 0;
+        list-style: none;
+        cursor: pointer;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 21px;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      summary span {
+        color: var(--gold);
+        font-family: "DM Sans", sans-serif;
+        font-size: 20px;
+        transition: transform 0.2s;
+      }
+
+      details[open] summary span {
+        transform: rotate(45deg);
+      }
+
+      details p {
+        max-width: 700px;
+        padding: 0 0 25px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      /* FOOTER */
+
+      footer {
+        background: #1c100d;
+        color: white;
+      }
+
+      .footer-top {
+        display: grid;
+        grid-template-columns: 2fr repeat(3, 1fr);
+        gap: 50px;
+        padding: 75px 0;
+      }
+
+      .footer-brand p {
+        margin-top: 25px;
+        color: #98867d;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .footer-column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .footer-column > span:first-child {
+        margin-bottom: 10px;
+        color: var(--gold);
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+      }
+
+      .footer-column a,
+      .footer-column > span:not(:first-child) {
+        color: #a9988f;
+        font-size: 11px;
+      }
+
+      .footer-column a:hover {
+        color: white;
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 22px 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        color: #76645c;
+        font-size: 9px;
+      }
+
+      .floating-wa {
+        position: fixed;
+        z-index: 900;
+        right: 22px;
+        bottom: 22px;
+        width: 56px;
+        height: 56px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #2baa5b;
+        color: white;
+        font-size: 25px;
+        box-shadow: 0 10px 30px rgba(0,0,0,.2);
+        transition: 0.25s;
+      }
+
+      .floating-wa:hover {
+        transform: translateY(-4px) scale(1.04);
+      }
+
+      /* RESPONSIVE */
+
+      @media (max-width: 900px) {
+        .desktop-nav,
+        .nav-order {
+          display: none;
+        }
+
+        .mobile-toggle {
+          display: block;
+        }
+
+        .mobile-menu {
+          padding: 10px 24px 25px;
+          border-top: 1px solid var(--border);
+          background: var(--white);
+        }
+
+        .mobile-menu.show {
+          display: flex;
+          flex-direction: column;
+          gap: 18px;
+        }
+
+        .mobile-menu a {
+          font-size: 13px;
+          font-weight: 600;
+        }
+
+        .mobile-order {
+          padding: 14px;
+          text-align: center;
+          border-radius: 100px;
+          background: var(--brown);
+          color: white;
+        }
+
+        .hero-content,
+        .signature-grid,
+        .location-grid,
+        .faq-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 120px;
+          padding-bottom: 80px;
+        }
+
+        .hero-product {
+          min-height: 520px;
+        }
+
+        .intro-grid,
+        .story-grid {
+          grid-template-columns: 1fr;
+          gap: 35px;
+        }
+
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .features-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .feature:nth-child(2) {
+          border-right: 0;
+        }
+
+        .feature:nth-child(-n+2) {
+          border-bottom: 1px solid var(--border);
+        }
+
+        .feature:first-child {
+          padding-left: 25px;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 300px 220px 220px;
+        }
+
+        .gallery-large {
+          grid-column: span 2;
+          grid-row: auto;
+        }
+
+        .gallery-wide {
+          grid-column: span 2;
+        }
+
+        .footer-top {
+          grid-template-columns: 1.5fr 1fr 1fr;
+        }
+
+        .footer-column:last-child {
+          display: none;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .container,
+        .nav-container,
+        .hero-content {
+          width: min(100% - 32px, 1180px);
+        }
+
+        .section {
+          padding: 80px 0;
+        }
+
+        .hero h1 {
+          font-size: 57px;
+        }
+
+        .hero-trust {
+          gap: 15px;
+          margin-top: 40px;
+        }
+
+        .hero-trust span {
+          font-size: 8px;
+        }
+
+        .hero-product {
+          min-height: 420px;
+        }
+
+        .hero-ring {
+          width: 320px;
+          height: 320px;
+        }
+
+        .hero-image-wrap {
+          width: 270px;
+        }
+
+        .card-top {
+          top: 55px;
+        }
+
+        .card-bottom {
+          bottom: 50px;
+        }
+
+        .section-heading {
+          display: block;
+        }
+
+        .section-heading > p {
+          margin-top: 25px;
+        }
+
+        .category-filter {
+          margin-top: 35px;
+        }
+
+        .products-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .product-info h3 {
+          font-size: 23px;
+        }
+
+        .signature-grid {
+          gap: 55px;
+        }
+
+        .signature-stamp {
+          right: -5px;
+        }
+
+        .signature-details {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .story-columns {
+          grid-template-columns: 1fr;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .feature {
+          border-right: 0 !important;
+          border-bottom: 1px solid var(--border);
+          padding: 30px 0 !important;
+        }
+
+        .feature:last-child {
+          border-bottom: 0;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(4, 250px);
+        }
+
+        .gallery-large,
+        .gallery-wide {
+          grid-column: auto;
+        }
+
+        .location-info {
+          grid-template-columns: 1fr;
+        }
+
+        .map-card {
+          min-height: 360px;
+        }
+
+        .footer-top {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .footer-brand {
+          grid-column: span 2;
+        }
+
+        .footer-column:last-child {
+          display: flex;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          gap: 7px;
+        }
+      }
+    </style>
+  </body>
 </html>
